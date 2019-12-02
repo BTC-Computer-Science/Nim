@@ -14,19 +14,17 @@ alert("Welcome to Nim! You go first.");
 while (count<21) {
    // Ask for player input and say current count, add to count
    winner="CPU"; 
-   count+=playerTurn();
+   count=playerTurn();
    alert("Current count is "+count);
    // Check if player loses, and prevent CPU from taking turn if so
    if (count<21) {
       // Ask for CPU input and say current count, add to count
       winner="you";
-   if (gameState=="trainer"){
-      cpuInput=cpuTurnTrainer(count);    
-    }
-   else(cpuInput=cpuTurn());
-   alert("CPU counts "+cpuInput);
-   count+=cpuInput;
-   alert("Current count is "+count);
+      if (gameState=="trainer"){
+         count=cpuTurnTrainer(count);    
+      }
+      else count=cpuTurn(count);
+      alert("Current count is "+count);
    }
 }
 alert(winner+" won!");
@@ -34,22 +32,38 @@ alert(winner+" won!");
 
 // Define function playerTurn
 function playerTurn(){
-  playerInput = prompt("Count how many? (1-3)");
-  playerInput = parseInt(playerInput);
-  return playerInput;
+	var goodTurn=false;
+	while(goodTurn == false){
+		turn=parseInt(prompt("Pick a number 1-3"));
+		if(turn>0 && turn<4 && Math.floor(turn)==turn){
+			goodTurn=true;
+			alert("You counted "+turn+".");
+		}
+		else{
+			alert("Number is out of range, try again.");
+		}
+	}
+   count+=turn;
+   return count;
 }
 
 // Define function cpuTurn
-function cpuTurn(){
-  cpuInput=Math.floor(Math.random()*3)+1;
-  return cpuInput;
+function cpuTurn(count){
+	let turn=22;
+	while(turn!=1 && count+turn>20){
+		turn=Math.floor(Math.random()*3)+1;
+	}
+	alert("cpu counts "+turn);
+	count+=turn;
+   return count;
 }
 
-function cpuTurnTrainer(count){
-   var multi=0;
-   for(multi = 4; multi < count; multi += 4) {
-      console.log(multi);
-   }
-   cpuInput = multi - count;     
-   return cpuInput;
+// Define function cpuTrainer
+function cpuTrainer(count){
+	if (count%4 != 0) turn=4-(count%4);
+	else if (count==20) turn = 1;
+	else turn = Math.floor(Math.random()*3)+1;
+	alert("cpu counts "+turn);
+	count+=turn;
+	return count;
 }
