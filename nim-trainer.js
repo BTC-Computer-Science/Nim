@@ -21,7 +21,7 @@ while (count<21) {
       // Ask for CPU input and say current count, add to count
       winner="you";
       if (gameState=="trainer"){
-         count=cpuTurnTrainer(count);    
+         count=cpuTrainer(count);    
       }
       else count=cpuTurn(count);
       alert("Current count is "+count);
