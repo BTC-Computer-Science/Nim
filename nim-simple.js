@@ -5,8 +5,14 @@ while (again == true) {
 	turn=0;
 	next=games%2;
 	while (count < 21){
-		if (next == 0) count = cpuTurn(count);
-		else count = userTurn(count);
+		if (next == 0) {
+			count = cpuTurn(count);
+			alert("Count is now "+count);
+		}
+		else {
+			count = userTurn(count);
+			alert("Count is now "+count);
+		}
 		if (count < 21) next=nextSwitch(next);
 	}
 	again = declareWinner(next);
@@ -14,28 +20,26 @@ while (again == true) {
 alert("Nice playing with you!");
 
 function cpuTurn(count){
-	var goodTurn = false;
-	var turn=0;
+	let goodTurn = false;
+	let turn=0;
 	while (goodTurn == false) {
 		turn = Math.floor(Math.random()*3)+1;
 		if (turn == 1 || turn > 1 && count+turn < 21) goodTurn = true;
 	}
 	alert("CPU counts "+turn);
 	count += turn;
-	alert("Count is now "+count);
 	return count;
 }
 
 function userTurn(count) {
-	var goodTurn = false;
-	var turn=0;
+	let goodTurn = false;
+	let turn=0;
 	while (goodTurn == false) {
 		turn = prompt("Enter 1, 2 or 3");
 		if (turn > 0 && turn < 4 && Math.floor(turn)==turn) goodTurn=true;
 		else alert("Invalid input. Enter 1,2 or 3.");
 	}
-	count += Number(turn);
-	alert("Count is now "+count);
+	count += parseInt(turn);
 	return count;
 }
 
