@@ -1,4 +1,13 @@
+
+/* 
+ * Nim Simple - Mr. M.'s Version 
+ * Note: Global variables have been passed as parameters.  This is not best practice, but helpful for tracking.
+ */
+
+/* Initialize Globals */
 var again=true, games=0, count=0, next=0;
+
+/* Main */
 alert("Let\'s play Nim!");
 while (again == true) {
 	count=0;
@@ -19,6 +28,9 @@ while (again == true) {
 }
 alert("Nice playing with you!");
 
+/* Functions */
+
+/* CPU Turn -- random turn but not purposely losing or going over 21 */
 function cpuTurn(count){
 	let goodTurn = false;
 	let turn=0;
@@ -31,6 +43,7 @@ function cpuTurn(count){
 	return count;
 }
 
+/* User Turn: prevents entering invalid turns */
 function userTurn(count) {
 	let goodTurn = false;
 	let turn=0;
@@ -43,12 +56,14 @@ function userTurn(count) {
 	return count;
 }
 
+/* Next Switch: changes turns */
 function nextSwitch(next){
 	if (next==0) next = 1;
 	else next = 0;
 	return next;
 }
 
+/* Declare Winner: Specifies winner value and asks for play again input */
 function declareWinner(next){
 	if (next==0) winner = "You";
 	else winner = "I";
