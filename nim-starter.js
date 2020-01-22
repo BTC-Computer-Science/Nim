@@ -1,5 +1,5 @@
 // Nim Super Duper Simple (no input validation)
-var count = 0; var playerInput = 0; var cpuInput = 0; var winner=null;
+var count = 0; var winner=null;
 while (count<21) {
 	turn=Math.floor(Math.random()*3)+1;
 	count+=turn;
