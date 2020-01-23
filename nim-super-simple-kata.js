@@ -6,8 +6,8 @@
  
  /* Main Code 
   * loop while count <21
-  * if count < 21 call cpuTurn, adding to count and alerting count
-  * if count < 21 call playerTurn, adding to count and alerting count
+  * if count < 21 call cpuTurn, adding to count and alerting count. Set winner as player. 
+  * if count < 21 call playerTurn, adding to count and alerting count. Set winner as CPU.
   * end loop
   * alert winner
   */
@@ -22,6 +22,6 @@
 /* cpuTurn
  * set winner as player
  * set turn as random number 1-3
- * alert turn
+ * alert CPU's turn
  * return turn
  */
