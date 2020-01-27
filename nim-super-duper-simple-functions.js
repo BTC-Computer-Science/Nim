@@ -14,7 +14,7 @@ alert(winner+" won!");
 
 function playerTurn(){
   var turn = prompt("Count how many? (1-3)");
-  return Number(turn);
+  return parseInt(turn);
 }
 
 function cpuTurn(){
