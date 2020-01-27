@@ -1,15 +1,9 @@
-/* Nim Simple by Marshall */
+/* Nim Simple Kata */
 
 /* Initialize global variables */
-
-// declare variable games and set equal to 0
-// declare variable again and set equal to true
-// declare variable count and set equal to 0
-// declare variable turns and set equal to 0
-// declare variable next and set equal to 0
+// games = 0, again = 0, count = 0, turns = 0, next = 0
 
 /* Main */
-
 // while again is equal to true 
 	// variable count equal to 0 
 	// variable turns equal to 0
