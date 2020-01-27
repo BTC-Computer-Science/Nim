@@ -1,6 +1,5 @@
 // Nim Super Duper Simple (no input validation)
 var count = 0; var turn = 0; var winner=null;
-alert("Welcome to Nim! You go first.");
 while (count<21) {
    winner="CPU"; 
    count+=playerTurn();
